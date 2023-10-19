@@ -1,5 +1,10 @@
 # Data Structure & Algorithms
-Data Structure is a way of arranging data on a computer so that it can be accessed and updated efficiently. It is also used for processing, retrieving, and storing data.
+## Data structure
+Data Structure is a way of arranging data on a computer so that it can be accessed and updated efficiently. The main idea behind using data structures is to minimize the time and space complexities. An efficient data structure takes minimum memory space and requires minimum time to execute the data.
+
+## Algorithms
+Algorithm is defined as a process or set of well-defined instructions that are typically used to solve a particular group of problems or perform a specific type of calculation. To explain in simpler terms, it is a set of operations performed in a step-by-step manner to execute a task.
+
 ## Why to learn about data structure and algorithms?
 As applications are getting complex and data rich, there are three common problems that applications face now-a-days.
 
@@ -34,6 +39,8 @@ DSA is used to solve above problems. Data can be organized in a data structure i
   <br>
   eg. tree, graph, etc.
   <br>
+
+
 
 
 
