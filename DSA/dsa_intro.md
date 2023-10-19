@@ -14,7 +14,7 @@ DSA is used to solve above problems. Data can be organized in a data structure i
    
 
 ## Classification of Data Structure
-![Alt text](image.png)
+![Alt text](./classificationdsa.png)
 
 ### 1. Linear Data Structure
 - Data elements are arranged sequentially or linearly, where each element is attached to its previous and next adjacent elements, is called a linear data structure.
