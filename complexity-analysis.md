@@ -91,5 +91,67 @@ Asymptotic notation is a way to describe the running time or space complexity of
         return total
       }
       ```
-      
+  1.  Loglinear Complexity O(n log n)  
+  O(nlogn) implies that logn operations will occur n times. O(nlogn) time is common in recursive sorting algorithms, binary tree sorting algorithms and most other types of sorts.
+      ```js
+      const nums = [128, 0, 64, 16, 4, 8, 2];
+
+      const merge = (left, right) => {
+        
+          let result = [];
+        
+          while(left.length || right.length) {
+
+              if(left.length && right.length) {
+                  if(left[0] < right[0]) {
+                      result.push(left.shift())
+                  } else {
+                      result.push(right.shift())
+                  }
+              } else if(left.length) {
+                  result.push(left.shift())
+              } else {
+                  result.push(right.shift())
+              }
+          }
+          return result;
+      };
+
+      const mergeSort = (arr) =>{
+          if(arr.length <= 1) {
+              return arr;
+          }
+
+          const pivot = arr.length / 2 ;
+          const left = arr.slice(0, pivot);
+          const right = arr.slice(pivot, arr.length);
+
+        return merge(mergeSort(left), mergeSort(right));
+      };
+
+      console.log(mergeSort(nums));
+      ```  
+
+
+### Complexity of Object
+insert - O(1)  
+remove - O(1)  
+access - O(1)  
+search - O(n)  
+Object.keys() - O(n)  
+Object.values() - O(n)  
+Object.entries() - O(n)  
+
+### Complexity of Array
+insert/remove at the end of the array - O(1)  
+insert/remove at the beginning of the array - O(n)  
+access - O(1)  
+search - O(n)  
+push/pop - O(1)
+shift/unshift/concat/slice/splice - O(n) 
+forEach/map/filter/reduce - O(n)       
+binary search - O(log n)
+recursive binary search - O(log n) 
+
+
   
