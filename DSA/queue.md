@@ -30,3 +30,9 @@ A Queue is defined as a linear data structure that is open at both ends and the 
 - In a classical queue, a new element can only be inserted when the existing elements are deleted from the queue.
 - Searching an element takes O(N) time.
 - Maximum size of a queue must be defined prior.
+
+### queue using array  
+
+```js
+
+```
