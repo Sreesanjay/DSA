@@ -38,6 +38,7 @@ The height of a node refers to the length of the longest path from that node to 
 ### Binary Tree  
 
 A binary tree is a hierarchical data structure in computer science and mathematics. It consists of nodes connected by edges, with each node having at most two children, which are referred to as the left child and the right child. The topmost node in a binary tree is called the root, and it serves as the starting point for traversing the tree.  
+- complete binary tree  :  a binary tree in which every level, except possibly the last, is completely filled, and all nodes in the last level are as far left as possible. 
 
 ### Binary Search Tree  
 It is a type of binary tree in which each node has at most two child nodes, typically referred to as the "left" child and the "right" child. The key property of a binary search tree is that it maintains a specific order among its elements, making it suitable for efficient searching, insertion, and deletion operations.
@@ -104,6 +105,24 @@ An AVL tree is a self-balancing binary search tree in which the heights of the l
 
 - Red-Black Tree  
 A red-black tree is another type of self-balancing binary search tree. It enforces balancing by coloring the edges (links) of the tree and adhering to specific rules. Red-black trees provide a balance guarantee that allows for efficient O(log n) operations.
+
+### complexity of a binary search tree
+1. Traversal - O(n). 
+1. Insertion and Deletion - averagae case - O(log n), worst case - O(n). 
+1. Deletion - O(n).  
+
+### Heap  
+A heap is a tree based datastructure in which the tree is a complete binary tree. 
+- Max Heep - for every node, its child node value should be less than or equal to that nodes value. So the greatest value in the heap will be the root node.
+- Min Heep - for every node, its child node value should be greater than or equal to that nodes value.    
+
+#### Operations in Heep  
+- Heapify: a process of creating a heap from an array.
+- Insertion: process to insert an element in existing heap time complexity O(log N).
+- Deletion: deleting the top element of the heap or the highest priority element, and then organizing the heap and returning the element with time complexity O(log N).
+- Peek: to check or find the first (or can say the top) element of the heap.
+
+#### Applications of Heap 
 
 
 
