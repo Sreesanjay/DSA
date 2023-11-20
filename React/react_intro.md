@@ -7,7 +7,7 @@ Instead of manipulating the browser's DOM directly, React creates a virtual DOM 
 
 ### Advantages of react
 
-- Effortless Maintenance   
+- Effortless Maintenance    
 Creating large applications with multiple integrations is a complex task; however, maintaining it with changing business requirements can be more complicated and expensive.modular and flexible architecture, leading to modernizing each component independently without affecting others. In addition, objects defined for a particular element can be reassigned to other components to reduce the developer’s effort.
 
 - Fast Rendering  

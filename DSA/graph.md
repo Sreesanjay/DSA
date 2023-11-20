@@ -1,5 +1,5 @@
 # Graph Datastrucutre 
-A graph is a non-linear data structure that contains set of vertices and edges. datas stored in vertices and the edges will connect between vertices. A graph is denoted as G(E, V)  
+1
 
 ![Alt text](https://media.geeksforgeeks.org/wp-content/uploads/20200630111809/graph18.jpg)  
 

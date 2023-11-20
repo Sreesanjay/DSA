@@ -112,7 +112,6 @@ A red-black tree is another type of self-balancing binary search tree. It enforc
 1. Deletion - O(n).  
 
 ### Heap  
-A heap is a tree based datastructure in which the tree is a complete binary tree. 
 - Max Heep - for every node, its child node value should be less than or equal to that nodes value. So the greatest value in the heap will be the root node.
 - Min Heep - for every node, its child node value should be greater than or equal to that nodes value.    
 
@@ -123,8 +122,10 @@ A heap is a tree based datastructure in which the tree is a complete binary tree
 - Peek: to check or find the first (or can say the top) element of the heap.
 
 #### Applications of Heap 
-
-
+- priority queue  
+- Dijkstra's Shortest Path Algorithm 
+- Memory Allocation in Operating Systems 
+- Load Balancing
 
 
 
