@@ -102,7 +102,146 @@ Reusability allows developers to create modular and maintainable code. React pro
 - Higher order component : Higher order components take a components and return another component with additional functionality. 
 - Custom hooks : Custom hooks are functions that encapsulate reusable logic and can be shared across components. 
 
+## Javascript XML (JSX) 
+- JSX allows us to write html code inside javascript and place them into the DOM without any createElement and appendChild.
+- browsers can't understand JSX. So it converts jsx to plain JavaScript using the tool babel. 
+### Difference between JSX and HTML 
+- html will directly interpret by browser. JSX needs to convert to javascript before it can be rendered in a browser. \
+- JSX uses className instead of class 
+- Attribute name should be in camelCasing format.
+- Inline styles are specified using objects. 
 
+## Components 
+- A component is a independent reusable piece of ui.
+- We can create large and complex UI's by combining these components. 
+- It returns a piece of JSX code which tells what should be rendered on the browser. 
+
+Types of components 
+### Functional component 
+Functional components are javascript functions this function may or may not receive props and return react elements. 
+### Class component 
+Class components are ES6 classes that extend from React.Component. They can have local state and lifecycle methods. 
+
+#### Life cycle methods
+Mounting  
+- constructor : When a component is initialised the constructor function will call first. The initial state and other initial vlaues will setup here. It will have an argument called props. 
+
+- getDerivedStateFromProps : This method will call right before rendering the element in DOM. Here we can set the initial state based on the initial props. It takes state as argument and returns an object with changes to the state. 
+- render : It is a required method. It will render the html to the DOM. 
+- componentDidMount : It is called after the component is rendered.  
+
+Updating  
+- getDerivedStateFromProps : This method will call right before rendering the element.
+- shouldComponentUpdate : This method will return a boolean value. we can specify whether react continue with the render or not. 
+- render : It will render the HTML to the DOM. 
+- getSnapshotBeforeUpdate : We have access to the previous props and  states after the update if we are using this method we should use componentDidUpdate.  
+- ComponentDidUpdate : This method will call right after the component is updated. 
+
+Unmount  
+- componentWillUnmount : It will call when the component is about to remove from the DOM. 
+
+## Dynamic rendering 
+Dynamic rendering is the process of generating and displaying content on website or application based on user interaction.In the context of web development, this often involves updating the user interface (UI) in response to user input or changes in the underlying data. 
+
+## Hooks  
+- Hooks allows functional components to have access to  states and life cycle features in functional components. 
+### useState  
+allows functional components to have local states. it takes an initial value as argument and returns an array with two elements.current state and other is the function to update the state. 
+### useEffect  
+The useEffect hook in React is used to handle the side effects in React such as fetching data, and updating DOM. This hook runs on every render but there is also a way of using a dependency array using which we can control the effect of rendering
+It has two arguments, function and dependency.
+### useMemo  
+useMemo is a hook that takes a function and a list of dependencies as arguments, and returns a value that is the result of calling the function. The value is stored in a cache and is only re-computed if one of the dependencies has changed. 
+### useContext  
+useContext provides a way to pass data or state through the component tree without having to pass props down manually through each nested component. there are two methods are there , createContext() , useContext().
+### useRef  
+It allows to create a reference to the DOM element in the funcitonal component. Unlike useState if we change a value in useRef it will not re-render the webpage 
+### useReducer
+The useReducer() hook is similar to useState() since it also provides a way to manage state changes and updates in a functional component but is intended to handle more complex state changes more efficiently. 
+It takes takes three arguments and returns array containing current state value and dispatch() funciton that can be trigger state changes by dispatching actions to the reducer. 
+- reducer(state , action) - returns new state.
+- initial state
+
+```js
+import { useReducer } from "react";
+
+const initialState = { name: "John", age: 30 };
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "updateName":
+      return { ...state, name: action.payload };
+    case "updateAge":
+      return { ...state, age: action.payload };
+    default:
+      return state;
+  }
+};
+
+const UserForm = () => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  return (
+    <form>
+      <label>
+        Name:
+        <input
+          type="text"
+          value={state.name}
+          onChange={(e) =>
+            dispatch({ type: "updateName", payload: e.target.value })
+          }
+        />
+      </label>
+      <label>
+        Age:
+        <input
+          type="number"
+          value={state.age}
+          onChange={(e) =>
+            dispatch({ type: "updateAge", payload: e.target.value })
+          }
+        />
+      </label>
+    </form>
+  );
+};
+```  
+
+### useCallback  
+useCallback is a react hook which is used for the memorisation of the callback function as we know in react every component re-rendered so its function also re created and so avoid the recreation of complex functions we used the concept of
+useCallback which takes a function as a arguement and a dependency list for which condition the component are going to create itself;
+```js
+import { useState, useCallback } from "react";
+import ReactDOM from "react-dom/client";
+import Todos from "./Todos";
+
+const App = () => {
+  const [count, setCount] = useState(0);
+  const [todos, setTodos] = useState([]);
+
+  const increment = () => {
+    setCount((c) => c + 1);
+  };
+  const addTodo = useCallback(() => {
+    setTodos((t) => [...t, "New Todo"]);
+  }, [todos]);
+
+  return (
+    <>
+      <Todos todos={todos} addTodo={addTodo} />
+      <hr />
+      <div>
+        Count: {count}
+        <button onClick={increment}>+</button>
+      </div>
+    </>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+```
 
 
 
