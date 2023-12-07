@@ -398,7 +398,7 @@ class ErrorBoundary extends React.Component {
   <MyWidget />
 </ErrorBoundary>
 ```
-
+https://dev.to/edemagbenyo/handle-errors-in-react-components-like-a-pro-l7l
 ## Synthetic event  
 Same event have different properties and behaviors in different browsers. React will abstract the native browser event into a cross browser compatible format.  
 
