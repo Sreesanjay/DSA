@@ -250,4 +250,42 @@ Accumulators are used in group stage in aggregation.It will perform a specific o
 ## Cluster  
  a collection of datasets distributed across many shards (servers) in order to achieve horizontal scalability and better performance in read and write operations.  
 
+## GridFS  
+GridFS is a specification and set of tools used in MongoDB to store and retrieve large files, such as images, videos, and other binary data, that exceed the BSON document size limit (16 MB). GridFS breaks large files into smaller chunks, stores those chunks as separate documents in a MongoDB collection, and provides a way to reassemble the chunks to retrieve the original file.
 
+## $concat  
+It is used to concat to strings in aggregation framework. 
+```js
+db.collection.aggregate([
+  {
+    $project: {
+      concatenatedField: {
+        $concat: ["Hello", " ", "World"]
+      }
+    }
+  }
+]);
+
+```  
+
+## $merge  
+The $merge stage is used to output the aggregation pipeline result to a collection.  
+
+```js
+db.sourceCollection.aggregate([
+  // Your aggregation pipeline stages go here
+  {
+    $group: {
+      _id: "$category",
+      totalAmount: { $sum: "$amount" }
+    }
+  },
+  {
+    $merge: {
+      into: "destinationCollection",
+      whenMatched: "merge",
+      whenNotMatched: "insert"
+    }
+  }
+]);
+```
