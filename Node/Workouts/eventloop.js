@@ -1,0 +1,10 @@
+console.log("Starting");
+setTimeout(()=>{
+    console.error("second");
+},10);
+process.nextTick(()=>{
+    console.warn("third")
+})
+setImmediate(()=>{
+    console.log("fourth")
+})
